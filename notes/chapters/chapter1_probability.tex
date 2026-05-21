@@ -1,0 +1,56 @@
+\chapter{Survival Models}
+
+\section{Survival Function}
+
+Let (x) denote a life aged x, where $x>= 0$. The death of (x) can ocur at any age greater than x, and we model the future lfietime of (x) by a continuous random variable which we denote by $T_x$. This means that $x+T_x$ represents the age-at-death random variable for (x). Let $F_x$ be the distribution function of $T_x$, so that:
+
+$$F_x(t) = Pr[T_x \leq t]$$
+
+this is the \textbf{lifetime distribution}. On the other hand, the survival function is given by:
+
+$$S_x(t) = 1 - F_x(t) = Pr[T_x>t]$$
+
+
+$$S_0(x+t) = S_0(x)S_x(t)$$
+
+We can interpret the probability of survival from bith to age x+t as the product of:
+
+\begin{itemize}
+    \item the probability of survival to age x from birth, and
+    \item the probability, having survived to age x, of further surviving to age x+t.
+\end{itemize}
+
+If we know survival probabilities from any age $x > 0$, then we also know survival probabilities from future age x+t :
+
+$$S_x(t+u) = S_x(t)S_{x+t}(u)$$
+
+Any survial function for a lifetime distributio must satisfy the following conditions to be valid:
+
+\begin{itemize}
+    \item $S_x(0) = 1$; the probability that a life currently aged x survives 0 years is 1. 
+    \item $lim_{t\rightarrow\infty}S_x(x) = 0$, all lives eventually die
+    \item The survival function must not bea  non increasing function of t.
+\end{itemize}
+
+\section{The force of mortality}
+
+$$\mu_x = -\frac{1}{S_0(x)}\frac{d}{dx}S_0(x)$$
+
+Survival function in terms of mortality function:
+
+$$S_x(t) = e^{-\int_x^{x+t}\mu_rdr}$$
+
+\section{Actuarial notation}
+
+
+\begin{equation}
+    _tp_x = Pr[T_x > t] = S_x
+\end{equation}
+
+\begin{equation}
+    _tq_x = Pr[T_x\leq t] = 1-S_x(t)=F_x(t)
+\end{equation}
+
+
+
+
